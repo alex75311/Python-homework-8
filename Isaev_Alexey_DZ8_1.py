@@ -9,7 +9,7 @@
 
 
 class Date:
-    def __init__(self, date: str):
+    def __init__(self, date):
         self.date = date
 
     @classmethod
@@ -30,8 +30,8 @@ class Date:
             return print('Верная дата')
 
 
-print(Date.extractor('15-58-648'))
-Date.valid('31-05-2019')
-Date.valid('31-04-2019')
+print(Date.extractor('15-12-2019'))
+Date.valid('31-05-1019')
+Date.valid('31-04-3019')
 Date.valid('32-11-2019')
-Date.valid('0-01-2019')
+Date.valid('15-01-2019')
