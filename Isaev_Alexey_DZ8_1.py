@@ -20,11 +20,11 @@ class Date:
     @staticmethod
     def valid(date_int):
         day, month, year = Date.extractor(date_int)
-        if year <= 1900 or year >= 2099 or month < 1 or month > 12 or day > 31 or day < 1:
+        if 2099 >= year <= 1900 or 12 > month < 1 or 1 > day > 31:
             return print('Не верная дата')
-        # elif 1 > month > 12:
-        #     return print('Не верная дата')
-        elif month in (2, 4, 6, 9, 11) and day > 30:
+        elif month in (4, 6, 9, 11) and day > 30:
+            return print('Не верная дата')
+        elif (year % 400 != 0 and (year % 4 != 0 and year % 100 != 0)) and month == 2 and day > 28:
             return print('Не верная дата')
         else:
             return print('Верная дата')
@@ -34,4 +34,8 @@ print(Date.extractor('15-12-2019'))
 Date.valid('31-05-1019')
 Date.valid('31-04-3019')
 Date.valid('32-11-2019')
+Date.valid('28-02-2013')
+Date.valid('29-02-2013')
+Date.valid('29-02-2008')
+Date.valid('31-01-2008')
 Date.valid('15-01-2019')
